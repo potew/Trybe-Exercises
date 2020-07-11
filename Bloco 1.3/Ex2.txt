@@ -1,0 +1,99 @@
+curl -X GET -d firstname:Andre  https://httpbin.org/anything > Ex2.txt
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "firstname:Andre": ""
+  }, 
+  "headers": {
+    "Accept": "*/*", 
+    "Content-Length": "15", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/7.58.0", 
+    "X-Amzn-Trace-Id": "Root=1-5e3c887a-b6b7cae7c516314ca7fb32cb"
+  }, 
+  "json": null, 
+  "method": "GET", 
+  "origin": "187.20.210.129", 
+  "url": "https://httpbin.org/anything"
+}
+-X POST -d lastname:Palhares https://httpbin.org/anything >> Ex2.txt
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "lastname:Palhares": ""
+  }, 
+  "headers": {
+    "Accept": "*/*", 
+    "Content-Length": "17", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/7.58.0", 
+    "X-Amzn-Trace-Id": "Root=1-5e3c889a-16b6d7db1a7ee9b88fbf1f22"
+  }, 
+  "json": null, 
+  "method": "POST", 
+  "origin": "187.20.210.129", 
+  "url": "https://httpbin.org/anything"
+}
+curl -X PUT --data "firstname=Andre&lastname=Palhares" https://httpbin.org/anything >> Ex2.txt
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "firstname": "Andre", 
+    "lastname": "Palhares"
+  }, 
+  "headers": {
+    "Accept": "*/*", 
+    "Content-Length": "33", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/7.58.0", 
+    "X-Amzn-Trace-Id": "Root=1-5e3c8a0b-79224c2c88ae4be9cbe58985"
+  }, 
+  "json": null, 
+  "method": "PUT", 
+  "origin": "187.20.210.129", 
+  "url": "https://httpbin.org/anything"
+}
+curl -X POST -H "Content-Type: application/json" -d json="{"escola": "Trybe"}" https://httpbin.org/anything
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/7.58.0", 
+    "X-Amzn-Trace-Id": "Root=1-5e3c8a38-2310b788a7dd54a3bbd7cadf"
+  }, 
+  "json": null, 
+  "method": "DELETE", 
+  "origin": "187.20.210.129", 
+  "url": "https://httpbin.org/anything"
+}
+{
+  "args": {}, 
+  "data": "{escola: Trybe}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Content-Length": "15", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/7.58.0", 
+    "X-Amzn-Trace-Id": "Root=1-5e3c8eb0-172ca045b465c6408fe4ac84"
+  }, 
+  "json": null, 
+  "method": "POST", 
+  "origin": "187.20.210.129", 
+  "url": "https://httpbin.org/anything"
+}

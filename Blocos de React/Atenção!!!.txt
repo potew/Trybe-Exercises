@@ -1,0 +1,1 @@
+Todos os exercícios referentes aos blocos de React (12 a 16) estão nesta pasta para evitar milhares de outras pastas duplicadas.

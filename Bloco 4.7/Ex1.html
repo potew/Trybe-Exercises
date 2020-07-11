@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kindle</title>
+  <link rel="stylesheet" href="Estilo.css">
+</head>
+
+<body>
+  <header>
+    Super Lorem Ipsum!!
+  </header>
+  <article>
+    <section>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus
+      nisi eget enim rutrum, eget sodales arcu aliquam. Suspendisse ornare
+      erat tellus, tincidunt viverra mauris sollicitudin quis. Aliquam erat
+      volutpat. Fusce posuere leo id ullamcorper pulvinar. Aliquam feugiat,
+      metus eu viverra mollis, ex massa egestas nisi, eu tempus odio urna eget
+      justo. Curabitur a lectus ac diam pulvinar iaculis. Nulla nec magna et
+      justo lobortis consequat. Vestibulum viverra sed orci in elementum.
+      Morbi eu sapien vel sem volutpat cursus. Morbi vestibulum elit eu ligula
+      interdum, malesuada molestie justo euismod. Suspendisse consectetur ante
+      et ultricies eleifend. Etiam at elementum sapien.
+    </section>
+    <section>
+      Nam mi nulla, euismod et luctus vel, egestas vel quam. Curabitur quis
+      rhoncus felis. Duis at tortor cursus arcu consequat interdum ut ac quam.
+      Vestibulum viverra luctus nunc, non bibendum erat bibendum at. Sed quis
+      augue id erat luctus convallis. Suspendisse eget accumsan nibh. Maecenas
+      ultricies enim massa, sit amet rhoncus sem feugiat ac. In fringilla
+      purus nec sem tempus, et varius nisi tempor. Donec congue sem est, at
+      bibendum leo rutrum a. Fusce sagittis ullamcorper lacus eget dapibus.
+      Vestibulum ut malesuada nisl. Morbi finibus fringilla nisl, id pretium
+      ipsum consequat vel. Praesent a molestie sapien.
+    </section>
+    <section>
+      In et varius sem, sed lobortis dui. Integer at venenatis mauris, a
+      commodo ex. Sed quis orci ante. Aenean ut tortor tincidunt, tristique
+      dolor eget, lacinia justo. Nullam non sapien nibh. Nunc rhoncus aliquam
+      est luctus accumsan. Phasellus nec rutrum mi.
+    </section>
+    <section>
+      Vestibulum convallis, quam sit amet euismod faucibus, massa mi iaculis
+      tortor, ac sagittis est augue eu massa. Sed laoreet orci tempor, semper
+      est at, vestibulum magna. Pellentesque blandit est sed justo congue, ut
+      pretium lectus blandit. Vestibulum ut tempus metus. Integer non turpis a
+      leo posuere ullamcorper id in ligula. Sed in turpis semper, accumsan
+      justo a, dapibus ante. Nulla blandit, mi faucibus dapibus condimentum,
+      felis dui hendrerit felis, a volutpat neque massa id turpis. Vestibulum
+      vel vestibulum arcu. Praesent nec consectetur est, nec fermentum nibh.
+      Pellentesque imperdiet hendrerit lacus, quis eleifend mauris convallis
+      id. Mauris aliquam velit risus, at pulvinar ipsum euismod in. Mauris
+      nisl augue, porttitor eu pharetra vitae, pretium non nibh. Aenean sit
+      amet velit ac erat egestas efficitur.
+    </section>
+    <section>
+      Phasellus ullamcorper orci eu nisi egestas faucibus. Aenean sed eros
+      augue. Duis non tempus enim. Maecenas ut finibus dui, blandit cursus ex.
+      Aliquam erat volutpat. Aliquam erat volutpat. Proin tincidunt quis lorem
+      vitae fermentum. Nam eget nunc ac orci porttitor dapibus. Nam pharetra
+      est at orci venenatis maximus. Pellentesque consectetur ac leo nec
+      fermentum. Ut eu ultrices odio, nec molestie ligula. Phasellus fermentum
+      egestas turpis, eu laoreet lectus feugiat et.
+    </section>
+  </article>
+
+  <footer>
+    <div id="listaControles">
+      Digite um valor válido em cada caixa e clique no OK para modificar o atributo correspondente.
+      <ul>
+        <li>Cor da fonte <input id="cxCorFonte" type="text" /> <button onclick=mudaCorFonte()>OK</button></li>
+        <li>Cor de fundo <input id="cxCorFundo" type="text" /> <button onclick=mudaCorFundo()>OK</button></li>
+        <li>Tamanho da fonte <input id="cxTamFonte" type="text" /> <button onclick=mudaTamFonte()>OK</button></li>
+        <li>Tipo de fonte <input id="cxTipoFonte" type="text" /> <button onclick=mudaFamFonte()>OK</button></li>
+        <li>Espaçamento entre linhas <input id="cxEspacLinhas" type="text" />
+          <button onclick=mudaEspEntreLinhas()>OK</button></li>
+        <li>Espaçamento entre caracteres <input id="cxEspaCaracteres" type="text" />
+          <button onclick=mudaEspEntreCaracteres()>OK</button></li>
+        <li>Text-transform <input id="cxTransfTexto" type="text" value="none" />
+          <button onclick=transformaTexto()>OK</button> Exemplos: capitalize, uppercase, lowercase...</li>
+      </ul>
+      Obs.: não avacalhe com os valores!!
+      <p id="contagemVisitas">Aqui tem o número de visitas/refreshs do site</p>
+    </div>
+    <div id="botoesStorage">
+      Apenas os estilos de cor de fonte, tamanho e tipo são carregados do Armazenamento Local.<br><br>
+      <button onclick=carregaDados()>Carregar configurações</button>
+      <button onclick=apagaDados()>Apagar todo localStorage desta página</button>
+      <button onclick=limpaCaixasTxt()>Limpar campos</button>
+    </div>
+  </footer>
+
+  <script>
+    window.onload = function () {
+      if (typeof Storage != "undefined") {
+        let contVisitas = Number(localStorage.getItem("Visitas"));
+        if (localStorage.getItem("Visitas")) {
+          contVisitas++;
+          localStorage.setItem("Visitas", contVisitas);
+        }
+        else localStorage.setItem("Visitas", 1);
+      }
+      else alert("Sem suporte para Armazenamento local :P");
+      let textoVisitas = document.getElementById("contagemVisitas");
+      textoVisitas.innerHTML = `Você já visitou essa página ${localStorage.Visitas} vezes anteriormente!`;
+    };
+
+    const cx01 = document.getElementById("cxCorFonte"),
+      cx02 = document.getElementById("cxCorFundo"),
+      cx03 = document.getElementById("cxTamFonte"),
+      cx04 = document.getElementById("cxTipoFonte"),
+      cx05 = document.getElementById("cxEspacLinhas"),
+      cx06 = document.getElementById("cxEspaCaracteres"),
+      cx07 = document.getElementById("cxTransfTexto");
+    let divPrincipal = document.getElementsByTagName("article")[0];
+    let sections = document.getElementsByTagName("section")[1];
+
+    function mudaCorFonte() {
+      divPrincipal.style.color = cx01.value;
+      localStorage.setItem("CorFonte", cx01.value);
+    };
+    function mudaCorFundo() {
+      sections.style.backgroundColor = cx02.value;
+      localStorage.setItem("CorFundo", cx02.value);
+    };
+    function mudaTamFonte() {
+      sections.style.fontSize = cx03.value;
+      localStorage.setItem("TamFonte", cx03.value);
+    };
+    function mudaFamFonte() {
+      divPrincipal.style.fontFamily = cx04.value;
+      localStorage.setItem("TipoFonte", cx04.value);
+    };
+    function mudaEspEntreLinhas() {
+      divPrincipal.style.lineHeight = cx05.value;
+      localStorage.setItem("EspacLinhas", cx05.value);
+    };
+    function mudaEspEntreCaracteres() {
+      divPrincipal.style.letterSpacing = cx06.value;
+      localStorage.setItem("EspaCaracteres", cx06.value);
+    };
+    function transformaTexto() {
+      divPrincipal.style.textTransform = cx07.value;
+      localStorage.setItem("EstiloTexto", cx07.value);
+    };
+
+    function carregaDados() {
+      divPrincipal.style.color = localStorage.CorFonte;
+      sections.style.backgroundColor = localStorage.CorFundo;
+      divPrincipal.style.fontSize = localStorage.TamFonte;
+      divPrincipal.style.fontFamily = localStorage.TipoFonte;
+    }
+
+    function apagaDados() {
+      localStorage.clear();
+    }
+
+    function limpaCaixasTxt() {
+      let caixas = document.querySelectorAll("input");
+      for (i in caixas)
+        caixas[i].value = "";
+    }
+  </script>
+</body>
+
+</html>

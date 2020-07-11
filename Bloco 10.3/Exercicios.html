@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Best jokes eeeeevah</title>
+  <script>
+    // 1. Como o primeiro exercício, vamos usar a função fetch que vimos na aula ao vivo para criar um site simples com um gerador de piadas ruins!. Como? Vamos fazer ele juntos!
+
+    const API_URL = "https://icanhazdadjoke.com/"
+    const myObject = { method: 'GET',
+                       headers: { 'Accept': 'application/json' }
+                      }
+
+    const fetchJoke = () => {
+      fetch(API_URL, myObject)
+      .then((response) => response.json())
+      .then((data) => document.getElementById('jokeContainer').innerText = data.joke)
+    }
+
+    // 2. Agora, um passo para trás: vamos fazer, passo a passo, uma Promise. Primeiramente, instancie uma Promise. Dentro dela você deve produzir um array com dez números aleatórios de 1 a 50, elevá-los todos ao quadrado. Se a soma de todos esses elementos for inferior a 8000, a promise deve ser resolvida. Caso contrário, ela deve ser rejeitada. Acresça um then e um catch à Promise com qualquer coisa dentro só para que o código funcione.
+
+    const criArray = () => {
+      let arraya = [];
+      for (let i = 0; i < 10; i++) {
+        arraya[i] = Math.floor(Math.pow((Math.random() * 51), 2));
+        console.log(`Elemento ${i}: ${arraya[i]}`);
+      } //Dava pra somar direto (ou nem gerar array, mas para pegar o costume...)
+      return arraya.reduce((tot, num) => { return tot + num })
+    }
+
+    const item3 = (soma) => {
+      const arrDivisoes = [2, 3, 5, 10].map((item) => item = (soma / item));
+      console.log(`Array dividido: ${arrDivisoes}`);
+      return arrDivisoes;
+    }
+
+    const item2 = new Promise((resolve, reject) => {
+      const somArray = criArray();
+      console.log(`Soma de todos os itens da array: ${somArray}`);
+      somArray > 8000 ?
+      resolve(item5(item3(somArray))) :
+      reject(`A soma foi menor que 8000`);
+    })
+
+    // 3. Quando a promise for resolvida com sucesso retorne o resultado da divisão desse número por 2, 3, 5 e 10 em um array.
+    // 4. Quando a Promise for rejeitada imprima, via console.log, a frase “É mais de oito mil! Essa promise deve estar quebrada!”
+
+    item2.then((arrRetornado) => console.log(`Chamada da promise 1 bem-sucedida: ${arrRetornado}`));
+    item2.catch(() => console.log('Déve ser mais de oito mil! Essa promise só pode estar quebrada!'));
+
+    // 5. Quando a Promise for bem sucedida encadeie nela uma segunda Promise que some os elementos do array.
+    function item5(arraItem3) { 
+      return new Promise((resolve, reject) => {
+      arraItem3 ? 
+      resolve(`Soma do array das divisões: ${arraItem3.reduce((tot, num) => { return tot + num})}`) :
+      reject('Erro array vazio');
+      }
+    )}
+
+  </script>
+  </head>
+  <body>
+    <h1>Get ready for a great joke!</h1>
+    <h2 id="jokeContainer"></h2>
+    <button id="bt0001" onclick="fetchJoke()">Puxar piada</button>
+  </body>
+</html>

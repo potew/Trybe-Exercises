@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+div.one {
+    
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s ease-in-out;
+}
+
+div.two {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    transition: width 2s ease-out 1.6s;
+}
+
+div#main:hover .one  {
+    width: 1200px;
+}
+
+div#main:hover .two  {
+    width: 900px;
+}
+    </style>
+</head>
+<body>
+    <h1>Exercise 2 & 3</h1>
+Apply a 2 second transition to the width property of the first div.
+Define an ease-in-out timing function for the transition.
+
+Complete the CSS by adding transitions to the width of the divs 
+so that the transition on the blue div starts only when the transition of the red div ends.
+
+<div id="main">
+    <div class="one"></div><br>
+    <div class="two"></div>
+</div>
+
+<p>Hover over the div element above.</p>
+</body>
+</html>

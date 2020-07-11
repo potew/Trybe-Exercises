@@ -1,0 +1,113 @@
+body, ul, li, p {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;           /*Elimina as bolinhas nas listas*/
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}   /*Reset para uniformizar a exibição em diferentes navegadores*/
+
+a   {
+    color: white;
+    text-decoration: none;
+}
+
+h2  {
+    left: 0%;
+    position: relative;
+    top: 0 px;
+}
+
+header  {
+    align-items: center;                /*Alinha os itens verticalmente no centro (na mesma altura)*/
+    background-color: #123456;
+    color: red;
+    display: flex;
+    flex-wrap: wrap;                    /* Para mover os itens dinamicamente em caso de telas muito pequenas */
+    font-size: large;
+    height: 100px;
+    justify-content: space-between;     /* Coloca um espaço uniforme entre os ítens do header */
+    padding: 20px;
+}
+
+.menuSuperior    {
+    display: flex;                      /*Dispõe os ítens lado a lado*/
+}
+
+.menuSuperior li  {
+    margin-left: 10px;
+}
+
+.menuSuperior li a {
+    display: block;
+    padding: 10px;
+    background: tomato;
+}
+
+article {
+    background-color: teal;
+    display: flex;
+    height: 1300px;
+    justify-content: space-around;
+}
+
+section {
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#imagem1 {
+    position: absolute;
+    right: 10%;
+    top: 500px;
+}
+
+#imagem2 {
+    position: absolute;
+    right: 10%;
+    top: 800px;
+}
+
+#imagem3 {
+    position: absolute;
+    right: 10%;
+    top: 1100px;
+}
+
+#tabelaClassific  {
+    background-color: silver;
+    float: right;
+    height: auto;
+    right: 0%;
+    position: absolute;
+    top: 200px;
+    width: auto;
+}
+
+#voceSabia {
+    height: auto;
+    left: 2%;
+    position: absolute;
+    top: 200px;
+    width: 50%;
+}
+
+#aondeAcha {
+    left: 2%;
+    height: auto;
+    top: 600px;
+    position: absolute;
+    width: 50%;
+}
+
+#comportamento {
+    left: 2%;
+    height: auto;
+    top: 800px;
+    position: absolute;
+    width: 50%;
+}
+
+footer  {
+    background-color: royalblue;
+    line-height: 25pt;
+}

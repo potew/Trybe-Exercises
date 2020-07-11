@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercícios 7.3</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 95%;
+      height: 100px;
+      border: 1px solid red;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    .flex-direction_column { flex-direction: column; }
+    .justify-content_space-between { justify-content: space-between; }
+    .justify-content_center { justify-content: center; }
+    .align-items_flex-start { align-items: flex-start; }
+    .automatic-box-height { height: auto; }
+    .ball { border-radius: 100%; }
+    .green { background-color: green; }
+    .blue { background-color: blue; }
+    .red { background-color: red; }
+    .yellow { background-color: yellow; }
+    .black { background-color: black; }
+    .medium {
+      width: 50px;
+      height: 50px;
+    }
+
+    #exercise-1 {
+        animation-delay: 1s;
+        animation-duration: 3s;
+        animation-name: esqDir;
+    }
+
+    #exercise-2 {
+        animation-delay: 2s;
+        animation-duration: 2s;
+        animation-name: esqDir;
+        animation-fill-mode: forwards;
+    }
+
+    #exercise-3 {
+        animation-delay: 1s;
+        animation-duration: 1s;
+        animation-direction: alternate-reverse;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-name: esqDir;
+    }
+
+    #exercise-4:hover {
+        animation-duration: 5s;
+        animation-name: esqDir;
+        animation-play-state: running;
+    }
+
+    #section-5:hover #exercise-5 {
+        animation-duration: 5s;
+        animation-name: esqDir;
+        animation-play-state: running;
+    }
+
+    #exercise-6-square:hover #exercise-6-ball {
+        animation-duration: 5s;
+        animation-name: dirEsq;
+        animation-play-state: running;
+    }
+
+    #exercise-7 {
+        animation-duration: 10s;
+        animation-direction: alternate-reverse;
+        animation-iteration-count: infinite;
+        animation-name: esticar;
+    }
+
+    #exercise-8 {
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        animation-name: amarelar;
+    }
+
+    #exercise-9 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-name: multicolor;
+    }
+
+    #exercise-10 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-name: multicolor, esticar;
+    }
+
+    #exercise-11_1 {animation: esqDir 3s 2s linear infinite alternate-reverse;}
+    #exercise-11_2 {animation: esqDir 3s 2s ease-in-out infinite alternate-reverse;}
+    #exercise-11_3 {animation: esqDir 3s 2s ease-in infinite alternate-reverse;}
+    #exercise-11_4 {animation: esqDir 3s 2s ease-out infinite alternate-reverse;}
+    #exercise-11_5 {animation: esqDir 3s 2s ease infinite alternate-reverse;}
+
+    @keyframes esqDir {
+        from {}
+        to {margin-left: 95%;}
+    }
+
+    @keyframes dirEsq {
+        from {margin-right: 0;}
+        to {margin-right: 95%;}
+    }
+
+    @keyframes esticar {
+        from {width: 50px;}
+        to {width: 100%;}
+    }
+
+    @keyframes amarelar {
+        from {} to {background-color: yellow;}
+    }
+
+    @keyframes multicolor {
+        0%   {background-color: red;}
+        25%  {background-color: yellow;}
+        50%  {background-color: blue;}
+        100% {background-color: green;}
+    }
+
+    @keyframes desaparecer {
+        from {opacity: 100%;}
+        to {opacity: 0;}
+    }
+  </style>
+</head>
+<body>
+  <ol>
+    <li>
+      <section>
+        <div id="exercise-1" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section>
+        <div id="exercise-2" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section>
+        <div id="exercise-3" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section>
+        <div id="exercise-4" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section id="section-5">
+        <div id="exercise-5" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content_space-between">
+        <div id="exercise-6-square" class="blue medium"></div>
+        <div id="exercise-6-ball" class="ball green medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content_center">
+        <div id="exercise-7" class="blue medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content_center">
+        <div id="exercise-8" class="red medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content_center">
+        <div id="exercise-9" class="red medium"></div>
+      </section>
+    </li>
+    <li>
+      <section class="justify-content_center">
+        <div id="exercise-10" class="red medium"></div>
+      </section>
+    </li>
+      <li>
+        <section class="flex-direction_column align-items_flex-start automatic-box-height">
+          <div id="exercise-11_1" class="red medium"></div>
+          <div id="exercise-11_2" class="blue medium"></div>
+          <div id="exercise-11_3" class="green medium"></div>
+          <div id="exercise-11_4" class="yellow medium"></div>
+          <div id="exercise-11_5" class="black medium"></div>
+        </section>
+      </li>
+      <li>
+        <section class="justify-content_center">
+          <div id="exercise-12" class="black medium" onclick="ex12()"></div>
+        </section>
+      </li>
+  </ol>
+  <script>
+      function ex12() {
+          document.getElementById('exercise-12').style.animation = 'desaparecer 1s forwards';
+      }
+  </script>
+</body>
+</html>

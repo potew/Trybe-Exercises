@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    div#loader {
+        position: relative;
+        height: 200px;
+        width: 200px;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    div#loader .red {
+        display: inline-block;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: red;
+        opacity: 0.75;
+        transform-origin: 50% 50%;
+    }
+    div#loader.loading .red {
+        animation: rotating 4.5s linear infinite;
+    }
+    
+    div#loader .green {
+        display: inline-block;
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        top: 12.5px;
+        left: 12.5px;
+        background: green;
+        opacity: 0.75;
+        transform-origin: 50% 50%;
+    }
+    div#loader.loading .green {
+        animation: rotating 4s linear infinite;
+    }
+
+    div#loader .blue {
+        display: inline-block;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 25px;
+        left: 25px;
+        background: blue;
+        transform-origin: 50% 50%;
+    }
+    div#loader.loading .blue {
+        animation: rotating 3.5s linear infinite;
+    }
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Exercise 7</h1>
+    Add a script to the previous exercise so that the color of each square changes after each loop. The color should be chosen randomly (use the provided function, and existing code).
+    <div id="loader">
+        <div class="red"></div> 
+        <div class="green"></div>
+        <div class="blue"></div> 
+    </div>
+    
+    <input type="button" id="button" value="load">
+    <script>
+        var red = document.querySelector('div#loader .red');
+        var blue = document.querySelector('div#loader .blue');
+        var green = document.querySelector('div#loader .green');
+
+    function randomColor() {
+        return '#'+Math.random().toString(16).substr(-6);
+        }
+
+        red.style.backgroundColor = randomColor();
+        green.style.backgroundColor = randomColor();
+        blue.style.backgroundColor = randomColor();
+        // Toggle button code. Don't edit.
+        var loader = document.getElementById("loader");
+        var button = document.getElementById("button");
+        button.addEventListener("click", function() {
+            if ( loader.className === "loading" ) {
+                loader.className="";
+            } else {
+                loader.className="loading";
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Document</title>
+</head>
+<body>
+    <p class="texto"> A Lagarta e Alice olharam-se por algum tempo em silêncio: 
+        finalmente, a Lagarta tirou o narguilé da boca e dirigiu-se a 
+        ela com uma voz lânguida e sonolenta.</p>
+    <p class="texto2">Outra palavra em outro parágrafo</p>
+    <button onclick="surgir()">Aparecer</button>
+    <button onclick="colorir()">Colore</button>
+    <button onclick="sumir()">Some</button>
+    <div>Hihi</div>
+    <script>
+        var paragrafo1 = document.querySelector('.texto');
+        var paragrafo2 = document.querySelector('.texto2');
+        function surgir() {
+            paragrafo1.style.animation = 'revelaTexto 3s ease-in forwards';
+        }
+        function colorir() {
+            paragrafo2.style.animation = 'coloragem 6s ease-out backwards';
+        }
+        function sumir() {
+            paragrafo2.style.animation = 'someTexto 8s ease-out forwards';
+        }
+    </script>
+</body>
+</html>

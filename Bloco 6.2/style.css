@@ -1,0 +1,15 @@
+.rodape, .divGerada {
+    background-color: lemonchiffon;
+    border: 1px solid black;
+    display: block;
+    padding: 15px;
+    width: 350px;
+}
+
+label {
+    padding-top: 10px;
+}
+
+button {
+    margin-top: 10px;
+}

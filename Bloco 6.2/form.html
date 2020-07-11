@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Cadastre seu CV</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+</head>
+<body onload="init()">
+    <section class="section">
+        <div class="container">
+            <h2>Cadastre seu currículo mais uma vez!</h2>
+            <form class="form-group" action="" method="GET">
+                <label for="nome" class="label">Nome Completo</label>
+                <input class="form-control" type="text" name="nome" id="nome" maxlength="40">
+
+                <label for="cpf">CPF</label>
+                <input class="form-control" type="text" name="cpf" id="cpf" maxlength="11" placeholder="Apenas números">
+
+                <label for="email">Endereço de e-mail</label>
+                <input class="form-control" type="email" name="email" id="email" maxlength="50" required>
+
+                <label for="endereco">Endereço Residencial</label>
+                <input class="form-control" type="text" name="endereco" id="endereco" maxlength="200" required>
+                
+                <label for="cidade">Cidade</label>
+                <input class="form-control" type="text" name="cidade" id="cidade" maxlength="28" required>
+
+                <label for="selectEstados">UF</label>
+                <select class="form-control" name="estados" id="selectEstados" required></select>
+
+                <label for="residencia">Tipo de residência</label>
+                <input type="radio" id="rescasa" name="residencia" value="Casa">
+                <label for="rescasa">Casa</label>
+
+                <input type="radio" id="resapto" name="residencia" value="Apartamento">
+                <label for="resapto">Apartamento</label>
+
+                <br><label for="resumoCV">Dados do seu último emprego</label>
+                <textarea class="form-control" name="resumoCV" id="resumoCV" cols="40" rows="5" maxlength="1000"></textarea>
+
+                <label for="cargo">Cargo ocupado</label>
+                <input class="form-control" type="text" name="cargo" id="cargo" required>
+
+                <label for="desCargo">Descrição do seu último cargo</label>
+                <textarea class="form-control" name="desCargo" id="desCargo" rows="6" maxlength="1000" required></textarea>
+
+                <label for="dataInicio">Data de início (validação browser)</label>
+                <input class="form-control" type="date" name="dataI" id="dataInicio" required>
+
+                <label for="dataTermino">Data de término (validação pelo DatePicker)</label>
+                <input class="form-control" type="text" name="dataT" id="dataTermino" required>
+
+                <button type="button" class="btn btn-success" onclick="geraDiv()">Enviar</button>
+                <button type="reset" class="btn btn-danger">Limpar</button>
+        </form>
+        </div>
+    </section>
+    <script src="moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script>
+        var picker = new Pikaday({ 
+        field: document.getElementById('dataTermino'),
+        format: 'DD/MM/YYYY',
+        onselect: function() {document.getElementById('dataTermino').value = this.getMoment().format('Do MMMM YYYY');}
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>

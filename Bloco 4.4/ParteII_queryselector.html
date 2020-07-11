@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .paragrafos {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="page-title">Título</h2>
+    <p id="paragraph" class="paragrafos">Dê uma cor para este parágrafo!</p>
+    <h4 id="subtitle">Subtítulo</h4>
+    <p id="second-paragraph" class="paragrafos">Segundo parágrafo!</p>
+    <script>
+        var paragraph = document.getElementById("second-paragraph");
+        paragraph.style.color = "orange";
+        document.querySelector("#page-title").textContent = "Inferno na torre";
+        document.querySelector("#second-paragraph").textContent = "Sempre modifique uma propriedade...";
+        document.querySelector("#subtitle").textContent = "Um filme de desastres onde somente uma pessoa no mundo gostará...";
+        var primeiroParagrafo = document.querySelector(".paragrafos");
+        primeiroParagrafo.style.color = "blue";              //Compare com o arquivo anterior
+        console.log(document.querySelector("h4"));
+        //Estes métodos já precisam de colocar ponto ou # para indicar se é classe ou id!!!!!!!!!!!
+        //Por serem gerais, retornam apenas o primeiro elemento do array contendo tudo que satisfaça.
+    </script>
+</body>
+
+</html>

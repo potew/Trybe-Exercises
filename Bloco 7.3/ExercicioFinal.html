@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Bloco 7.3</title>
+    <style>
+        header {
+            background-color: cornflowerblue;
+            padding: 15px 0;
+        }
+
+        .mesa {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            margin: 10px;
+            transition: transform 1s ease-in-out;
+            width: 100px;
+        }
+
+        .gira:hover {
+            transform: rotate(360deg);
+        }
+
+        .roda:hover {
+            transform: rotate3d(-1, -1, -1, 300deg);
+        }
+
+        .zoom:hover {
+            transform: scale(1.5, 1.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="cartas/verso-da-carta.png" alt="Verso da carta" width="100px" onclick="tiraCarta()">
+    </header>
+    <section>
+        <div class="mesa"></div>
+    </section>
+    <script>
+        function geraNum(n) {
+            return (Math.floor(Math.random() * n));
+            }
+        const baralho = ['cartas/3O.png','cartas/4P.png','cartas/5O.png',
+        'cartas/6C.png','cartas/7E.png','cartas/7P.png','cartas/9E.png'];
+        
+        const classesAnima = ['gira','roda','zoom'];
+
+        function tiraCarta() {
+            let carta = document.createElement('img');
+            carta.classList.add('card');
+            carta.classList.add(classesAnima[geraNum(3)]);
+            carta.src = baralho[geraNum(7)];
+            document.getElementsByTagName('section')[0].appendChild(carta);
+        }
+    </script>
+</body>
+</html>

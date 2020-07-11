@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre seu CV</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="init()">
+    <form class="formulario" action="" method="GET">
+        <fieldset>
+            <label for="nome">Nome Completo</label>
+            <input type="text" name="nome" id="nome" maxlength="40">
+
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" id="cpf" maxlength="11" placeholder="Apenas números">
+
+            <label for="email">Endereço de e-mail</label>
+            <input type="email" name="email" id="email" maxlength="50" required>
+
+            <label for="endereco">Endereço Residencial</label>
+            <input type="text" name="endereco" id="endereco" maxlength="200" required>
+            
+            <label for="cidade">Cidade</label>
+            <input type="text" name="cidade" id="cidade" maxlength="28" required>
+
+            <label for="selectEstados">UF</label>
+            <select name="estados" id="selectEstados" required></select>
+
+            <label for="residencia">Tipo de residência</label>
+            <input type="radio" id="rescasa" name="residencia" value="Casa">
+            <label for="rescasa">Casa</label>
+
+            <input type="radio" id="resapto" name="residencia" value="Apartamento">
+            <label for="resapto">Apartamento</label>
+       </fieldset>
+       <fieldset>
+            <label for="resumoCV">Dados do seu último emprego</label>
+            <textarea name="resumoCV" id="resumoCV" cols="40" rows="5" maxlength="1000"></textarea>
+
+            <label for="cargo">Cargo ocupado</label>
+            <input type="text" name="cargo" id="cargo" required>
+
+            <label for="desCargo">Descrição do seu último cargo</label>
+            <textarea name="desCargo" id="desCargo" cols="40" rows="5" maxlength="1000" required></textarea>
+
+            <label for="dataInicio">Data de início</label>
+            <input type="date" name="data" id="dataInicio" required>
+       </fieldset>
+       <div class="rodape">
+            <button type="button" onclick="geraDiv()">Enviar</button>
+            <button type="reset">Limpar campos</button>
+       </div>
+
+    </form>
+
+   <script src="scripts.js"></script>
+</body>
+</html>

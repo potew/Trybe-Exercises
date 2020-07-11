@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Calculadora</title>
+</head>
+
+<body>
+
+    <label>Potencie este número a 2:
+        <input type="number" id="square-input" size="2">
+    </label>
+    <button id="square-button">Calculate</button>
+    <br><br>
+
+    <label>Divida este por 2:
+        <input type="number" id="half-input" size="2">
+    </label>
+    <button id="half-button">Calculate</button>
+    <br><br>
+
+    <label>
+        Fração:
+        <input type="number" id="percent1-input" size="2">
+    </label>
+    <label>
+        Inteiro correspondente:
+        <input type="number" id="percent2-input" size="2">
+    </label>
+    <button id="percent-button">Calculate</button>
+    <br><br>
+
+    <label>Calcule área do círculo de raio...:
+        <input type="number" id="area-input" size="2">
+    </label>
+    <button id="area-button">Calculate</button>
+    <br><br>
+    <div id="solution">Resultado: aparece no console por enquanto.</div>
+    <script>
+        //Add a script tag, and add the functions from the calculator exercise (view the solution if you haven't done it yet).
+        //For each operation, create an event listener for the button, and when it's clicked, find the value of the appropriate input and show the result of the calculation in the solution div.
+
+        let caixaQuad = document.getElementById("square-input");        //poderia ter usado o valor direto, mas como precisarei
+        let caixaDiv = document.getElementById("half-input");           //dele novamente no eventListener abaixo,
+        let caixaFrac = document.getElementById("percent1-input");      //deixei assim mesmo.
+        let caixaInt = document.getElementById("percent2-input");
+        let caixaArea = document.getElementById("area-input");
+
+        //Bonus: respond to key presses so that the user doesn't have to click the button.
+        caixaQuad.addEventListener('keyup', potencia2);
+        caixaDiv.addEventListener('keyup', divideAoMeio);
+        caixaInt.addEventListener('keyup', inteiroFrac);
+        caixaArea.addEventListener('keyup', areaCirc);
+
+        let resposta = document.getElementById("solution").textContent; //inútil por enquanto
+
+        const botPotencia = document.getElementById("square-button");
+        const botDivide = document.getElementById("half-button");
+        const botFracInt = document.getElementById("percent-button");
+        const botArea = document.getElementById("area-button");
+
+        botPotencia.addEventListener('click', potencia2);
+        botDivide.addEventListener('click', divideAoMeio);
+        botFracInt.addEventListener('click', inteiroFrac);
+        botArea.addEventListener('click', areaCirc);
+
+        function potencia2() {
+            let resultado = caixaQuad.value * caixaQuad.value;
+            console.log("O quadrado de " + caixaQuad.value + " é " + resultado);
+            resposta = "Resultado: " + resultado;   //linha sem funcionar
+        }
+        function divideAoMeio() {
+            let resultado = caixaDiv.value / 2;
+            console.log("O resultado de " + caixaDiv.value + "dividido por 2 é " + resultado);
+        }
+        function inteiroFrac() {
+            let resultado = (caixaFrac.value / caixaInt.value) * 100;
+            console.log(caixaFrac.value + " é " + resultado + "% de " + caixaInt.value);
+        }
+        function areaCirc() {
+            let resultado = (caixaArea.value * caixaArea.value * Math.PI);
+            console.log("A área de um círculo de raio " + caixaArea.value + " é " + resultado);
+        }
+    </script>
+
+</body>
+
+</html>

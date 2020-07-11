@@ -1,0 +1,51 @@
+p {
+  font-family: 'Costa Ptf Regular';
+  font-size: 16pt;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: quadraDoquadrado;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes revelaTexto {
+from {
+  font-size: xx-small;
+  margin-left: 100%;
+  opacity: 0%;
+  width: 300%
+}
+
+to {
+  font-size: 20pt;
+  margin-left: 0%;
+  opacity: 100%;
+  width: 100%;
+  }
+}
+
+@keyframes coloragem {
+  0%   {color: red;}
+  25%  {color: yellow;}
+  50%  {color: blue;}
+  100% {color: green;}
+}
+
+@keyframes someTexto {
+  from {opacity: 100%;}
+   to {opacity: 0%;}
+}
+
+@keyframes quadraDoquadrado {
+  0%   {background-color: red; left: 0; top: 0;}
+  25%  {background-color: blue; left: 0; top: 200px;}
+  50%  {background-color: green; left: 200px; top: 200px;}
+  75%  {background-color: yellow; left: 200px; top: 0;}
+  100% {background-color: red; left: 0; top: 0;}
+}

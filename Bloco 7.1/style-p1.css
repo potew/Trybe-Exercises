@@ -1,0 +1,35 @@
+*{padding: 0px; margin: 0px;}
+
+.centro {
+    background: #333;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+}
+
+.topo {
+    background: f00;
+    font-size: 2em;
+    height: 20%;
+    width: 100%;
+}
+
+.coluna2 {
+    background-color: tomato;
+    float: left;
+    width: 50%;
+}
+
+@media screen and (min-width:320px) and (max-width:568px) {
+    .centro {
+        width: 100%;
+    }
+    .topo {
+        background-color: yellow;
+    }
+    .coluna2 {
+        float: none;
+        width: 100%;
+    }
+}

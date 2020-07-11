@@ -1,0 +1,69 @@
+Identifique o endereço da sua máquina na rede com o comando ifconfig e procure por uma linha com o ip da sua máquina na rede local.
+
+%ifconfig | grep inet* > Ex3.txt
+
+inet 10.2.1.109  netmask 255.255.255.0  broadcast 10.2.1.255
+inet6 2804:14c:5b73:8057:8d4f:5035:4f2c:e5d1  prefixlen 64  scopeid 0x0<global>
+inet6 2804:14c:5b73:8057::100f  prefixlen 128  scopeid 0x0<global>
+inet6 2804:14c:5b73:8057:f25a:5a47:3fa5:660a  prefixlen 64  scopeid 0x0<global>
+inet6 fe80::f1ad:8b48:c828:c515  prefixlen 64  scopeid 0x20<link>
+
+Verifique na sua rede as máquinas que estão ativas e respondendo;
+
+$nmap -v -sn 10.2.1.1/24 >> Ex3.txt
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2020-02-06 19:16 -03
+Initiating Ping Scan at 19:16
+Scanning 256 hosts [2 ports/host]
+Completed Ping Scan at 19:16, 2.24s elapsed (256 total hosts)
+Initiating Parallel DNS resolution of 256 hosts. at 19:16
+Completed Parallel DNS resolution of 256 hosts. at 19:16, 0.02s elapsed
+Nmap scan report for 10.2.1.0 [host down]
+Nmap scan report for _gateway (10.2.1.1)
+Host is up (0.0025s latency).
+Nmap scan report for 10.2.1.11
+Host is up (0.00084s latency).
+Nmap scan report for 10.2.1.19
+Host is up (0.00078s latency).
+Nmap scan report for 10.2.1.100
+Host is up (0.0011s latency).
+Nmap scan report for 10.2.1.103
+Host is up (0.0096s latency).
+Nmap scan report for 10.2.1.105
+Host is up (0.0092s latency).
+Nmap scan report for 10.2.1.106
+Host is up (0.00088s latency).
+Nmap scan report for VM-Elementary (10.2.1.109)
+Host is up (0.0088s latency).
+Nmap scan report for 10.2.1.110
+Host is up (0.017s latency).
+Nmap scan report for 10.2.1.115
+Host is up (0.030s latency).
+Nmap scan report for 10.2.1.240
+Host is up (0.00090s latency).
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 256 IP addresses (11 hosts up) scanned in 2.26 seconds
+
+Verifique se a sua máquina possui portas abertas para o protocolo UDP;
+Verifique se a sua máquina possui portas abertas para o protocolo TCP;
+
+%nmap -v 10.2.1.109 >> Ex3.txt
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2020-02-06 19:19 -03
+Initiating Ping Scan at 19:19
+Scanning 10.2.1.109 [2 ports]
+Completed Ping Scan at 19:19, 0.00s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 19:19
+Completed Parallel DNS resolution of 1 host. at 19:19, 0.00s elapsed
+Initiating Connect Scan at 19:19
+Scanning VM-Elementary (10.2.1.109) [1000 ports]
+Discovered open port 80/tcp on 10.2.1.109
+Completed Connect Scan at 19:19, 0.01s elapsed (1000 total ports)
+Nmap scan report for VM-Elementary (10.2.1.109)
+Host is up (0.000076s latency).
+Not shown: 999 closed ports
+PORT   STATE SERVICE
+80/tcp open  http
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.05 seconds

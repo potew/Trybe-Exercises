@@ -1,0 +1,13 @@
+.color {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+.colorpicker {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  width: 500px;
+}

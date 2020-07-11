@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .paragrafos {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="page-title">Título</h2>
+    <p id="paragraph" class="paragrafos">Dê uma cor para este parágrafo!</p>
+    <h4 id="subtitle">Subtítulo</h4>
+    <p id="second-paragraph" class="paragrafos">Segundo parágrafo!</p>
+    <script>
+        var paragraph = document.getElementById("second-paragraph");
+        paragraph.style.color = "orange";
+        document.getElementById("page-title").textContent = "Inferno na torre";
+        document.getElementById("second-paragraph").textContent = "Sempre modifique uma propriedade...";
+        document.getElementById("subtitle").textContent = "Um filme de desastres onde somente uma pessoa no mundo gostará...";
+        var primeiroParagrafo = document.getElementsByClassName("paragrafos");
+        primeiroParagrafo[0].style.color = "blue";              //Pode fazer direto também...
+        console.log(document.getElementsByTagName("h4"));
+        //Estes métodos não precisam de colocar ponto ou # para indicar se é classe ou id!!!!!!!!!!!
+        //Por serem específicas, retornam um array contendo tudo que satisfaça. É diferente da querySelector mas querySelectorAll mostra tudo.
+    </script>
+</body>
+
+</html>

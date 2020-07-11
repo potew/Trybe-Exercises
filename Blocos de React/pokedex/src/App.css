@@ -1,0 +1,42 @@
+.App {
+  background-color: crimson;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.header {  
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: #0fa36b;
+}
+
+.a {
+  padding: 2rem;
+  color: white;
+  background-color: transparent;
+  font-size: 10px;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.pokeGrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon {
+  border: 2px solid blue;
+  border-style: double;
+  display: flex;
+  line-height: 0.5em;
+  margin: 5px;
+  padding: 10px;
+}
+
+.pokeDetail {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  width: 20%;
+}

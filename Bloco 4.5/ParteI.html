@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Teoria parte I</title>
+</head>
+
+<style>
+    #paiDoPai {
+        font-size: 25pt;
+    }
+
+    #pai {
+        color: blue;
+        font-size: 20pt;
+    }
+
+    #elementoOndeVoceEsta,
+    #primeiroFilho,
+    #terceiroFilho,
+    #quartoEUltimoFilho,
+    .irmaos {
+        color: brown;
+        font-size: 15pt;
+    }
+
+    #primeiroFilhoDoFilho,
+    #segundoEUltimoFilhoDoFilho,
+    .filho0001 {
+        color: blueviolet;
+        font-size: 10pt;
+    }
+</style>
+
+<!--parentNode: retorna o elemento pai.
+    childNodes: retorna um array com todos os elementos filhos
+    firstChild: retorna o primeiro filho
+    lastChild: retorna o último filho
+    nextSibling: retorna o próximo irmão.
+    previousSibling: retorna o irmão anterior.
+-->
+
+<body>
+    <div id="paiDoPai">1.1-Avô
+        <div id="pai">2.1-Pai
+            <div id="primeiroFilho">3.1-Primeiro Filho</div>
+            <div id="elementoOndeVoceEsta">3.2-Elemento que estás
+                <div id="primeiroFilhoDoFilho">4.1-Primeiro neto</div>
+                <div id="segundoEUltimoFilhoDoFilho">4.2-Segundo neto</div>
+            </div>
+            Atenção!
+            <div id="terceiroFilho">3.3-Terceiro filho</div>
+            <div id="quartoEUltimoFilho">3.4-Quarto Filho</div>
+        </div>
+    </div>
+
+    <button id="botApagar">Apagar</button>
+
+    <script>
+        //Cada linha abaixo corresponde a um exercício da Parte I da teoria
+        console.log("Respostas do exercício abaixo...");
+
+        console.log("1- Acesse o elemento elementoOndeVoceEsta.")
+        console.log(document.querySelector("#elementoOndeVoceEsta"));
+
+        //2-Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
+        document.querySelector("#elementoOndeVoceEsta").parentNode.color = "green";
+
+        //3-Acesse o primeiroFilhoDoFilho e adicione um texto a ele. Você lembra dos vídeos da aula anterior?
+        document.querySelector("#primeiroFilhoDoFilho").textContent = "4.1-Primeiro Filho do Filho";
+
+        console.log("4-Acesse o primeiroFilho a partir de pai.");
+        console.log(document.querySelector("#pai").children[0]);
+
+        console.log("5-Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta.");
+        console.log(document.querySelector("#elementoOndeVoceEsta").previousElementSibling);
+
+        console.log("6-Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.");
+        console.log(document.querySelector("#elementoOndeVoceEsta").nextSibling);
+
+        console.log("7-Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.");
+        console.log(document.querySelector("#elementoOndeVoceEsta").nextElementSibling);
+
+        console.log("8-Agora acesse o terceiroFilho a partir de pai.");
+        console.log(document.querySelector("#pai").childNodes[5]);
+
+        //Parte II
+        //2.1- Crie um irmão para elementoOndeVoceEsta.
+        var irmaozinho = document.createElement("div");
+        irmaozinho.innerHTML = ("3.5-Andrulas, o irmão");
+        irmaozinho.className = "irmaos";
+        document.getElementById("pai").append(irmaozinho);
+
+        //2.2- Crie um filho para elementoOndeVoceEsta.
+        var filhao = document.createElement("div");
+        filhao.className = "filho0001";
+        filhao.innerHTML = ("4.3-David, o filhão do EeqE");
+        document.getElementById("elementoOndeVoceEsta").appendChild(filhao);
+
+        //2.3- Crie um filho para primeiroFilhoDoFilho.
+        var novite = document.createElement("div");
+        novite.innerHTML = ("5.1-Filho do neto!!");
+        novite.className = "neto0001"
+        document.getElementsByClassName("filho0001")[0].appendChild(novite);
+
+        console.log("2.4- A partir deste filho criado, acesse terceiroFilho.");
+        console.log(document.querySelector(".filho0001").parentNode.nextElementSibling);
+
+        //Parte III
+        //Remova todos os elementos da página, menos pai, elementoOndeVoceEsta e primeiroFilhoDoFilho.
+        function funcaoApagar() {
+            //    document.querySelector("#elementoOndeVoceEsta").removeChild();
+            document.getElementById("primeiroFilho").remove();
+            document.getElementById("segundoEUltimoFilhoDoFilho").remove();
+            document.getElementById("terceiroFilho").remove();
+            document.getElementById("quartoEUltimoFilho").remove();
+            irmaozinho.remove();
+            filhao.remove();
+            novite.remove();
+        };
+        var botaoApaga = document.getElementById("botApagar");
+        botaoApaga.addEventListener('click', funcaoApagar);
+    </script>
+</body>
+
+</html>

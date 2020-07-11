@@ -1,0 +1,25 @@
+* {box-sizing: border-box}
+
+.formulario {
+    display: block;
+    margin: auto;
+    max-width: 300px;
+    white-space: pre-line;
+}
+
+.rodape, .divGerada {
+    background-color: lemonchiffon;
+    border: 1px solid black;
+    display: block;
+    padding: 15px;
+    width: 350px;
+}
+
+input {
+    width: auto;
+}
+
+fieldset {
+    background-color: lemonchiffon;
+    margin-top: 10px;
+}

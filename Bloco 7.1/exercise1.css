@@ -1,0 +1,55 @@
+body {
+    font-size: 14pt;
+    margin: 1em;
+}
+h1 {
+    font-size: 20pt;
+}
+h2 {
+    font-size: 18pt;
+}
+
+img {
+    padding: 20px;
+    max-width: 100%;
+}
+
+figure {
+	margin: 0;
+}
+
+@media screen and (min-width:800px) {
+    body {
+        background-color: blue;
+        color: wheat;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 12pt;
+        justify-content: space-around;
+        margin: 2em;
+    }
+
+    h2 {
+        font-size: 16pt;
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width:1400px) {
+    body {
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 12pt;
+        justify-content: space-around;
+        margin: 3em;
+        max-width: 1920px;
+    }
+
+    h2 {
+        font-size: 16pt;
+        width: 100%;
+    }
+}
