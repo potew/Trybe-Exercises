@@ -1,0 +1,70 @@
+// Vamos exercitar nossa capacidade de abstração em diferentes cenários. Em cada exercício reflita sobre a modelagem, as características, o comportamento e relações entre as classes.
+
+Exercício 1: Em um contexto de orientação a objetos, como podemos definir o que são mensagens e qual a sua importância?
+// As mensagens representam a comunicação entre os objetos por meio das suas respectivas responsabilidades. Exemplo: Objeto.méTodo(pa,râ,me,tros). Elas podem ou não alterar o estado de um objeto.
+
+Exercício 2: Após definir mensagens, como podemos definir interface e qual a relação entre os conceitos?
+// As formas de se interagir com os objetos por meio de atributos ou parâmetros, a depender do objeto em questão.
+
+Exercício 3: Para exercitar nossa capacidade de abstração, vamos modelar algumas partes de um software de geometria. Como poderíamos modelar um objeto retângulo?
+🐦 Baseado no exemplo do quadrado, vamos utilizar a seguinte notação para descrever nossas abstrações:
+
+Nome da abstração
+Retângulo
+
+Atributos/estados
+- Base
+- Altura
+
+Comportamentos
+- Calcular area (base * altura)
+- Calcular perímetro (2*base + 2*altura)
+
+Exercício 4: E como poderíamos definir um círculo?
+// Com o raio e o pi para ajudar nos comportamentos
+
+Exercício 5: Notaram que todas estas classes tem características em comum? Que tal abstrairmos utilizando a herança em uma classe que represente figuras geométricas em geral? Utilize a mesma notação anterior.
+Nome da abstração
+Generic - geofig - abstrata
+
+Atributos/estados
+- Pi e Raio
+
+Comportamentos
+- calcular area (medida 1 * medida 2)
+- calcular perímetro (2*m1 + 2*m2)
+
+Relações
+- círculo é uma especialização de uma fig. geométrica
+
+🐦 Reflita e considere características abstratas. Adicione também um espaço para demonstrar as relações existentes como o exemplo abaixo:
+relações:
+- Círculo é uma especialização de uma figura geométrica
+
+Exercício 6: Vamos mudar um pouco nosso contexto para um sistema de vendas de uma cafeteria. Como podemos abstrair um pedido? Quais as suas características e comportamentos?
+// Atributos/estados: Um pedido tem data/hora, nome do cliente, nome do atendente, itens consumidos do cardápio, valor total
+// Comportamentos: criar pedido, adicionar item ao pedido, fechar pedido
+
+Exercício 7: Considerando que uma das características de um pedido pode ser a sua forma de pagamento (cartão alimentação, cartão débito/crédito, dinheiro), como poderíamos definir cada uma das formas de pagamento? E se todas as formas de pagamento tivessem como requisito a autorização antes do pagamento?
+🐦 Um detalhe aqui é que como todos tipos de pagamentos possuem o comportamento de autorização, que podem variar pedido a pedido.
+Nome da abstração
+Forma de pagamento(generic) --> Dinheiro || Cartão de créDébito || VR (são formas de pgto)
+Atributos/estados: Valor --> ? | ? | ?
+Comportamentos: Autorizar (sempre true no caso de cash)
+
+
+Exercício 8: Imagine um sistema de mensageria em uma empresa de delivery, que notifica uma base de clientes sobre suas promoções. Estas notificações devem ser feitas por email, sms ou push notification e você é o responsável por modelar este serviço. Defina utilizando a mesma notação dos exercícios anteriores.
+// Nome da abstração: mensagem_promocional --> Mailer || SMS || Push
+
+Atributos/estados
+// Assunto, período e meio de divulgação, segmentação de clientes, mensagem
+
+Comportamentos/Métodos
+// Criar nova promoção, incluir/excluir clientes, selecionar meio, disparar envio
+
+Exercício 9: Notou que os pilares da orientação a objetos começam a manifestar a medida que fizemos nossos exercícios de modelagem? Que tal agora então modelarmos uma televisão? Será que mais pilares aparecerão?
+🐦 Pense em como encapsular comportamentos como o estado (ligado/desligado), ou a taxa de variação do volume, que muda de TV para TV etc.
+
+Nome da abstração - TV
+Atributos/estados - Volume, canal, resolução, configurações, taxa de aumento de volume, tamanho, estado (on/off)
+Comportamentos - Volume up, down, channel up/down/input, power toggle(on/off)

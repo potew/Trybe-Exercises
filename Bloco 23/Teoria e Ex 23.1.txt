@@ -1,0 +1,73 @@
+Iniciar o server Mongo: sudo service mongod start
+Obs.: stop para parar ou restart para reiniciar.
+Confira se rodou com sudo service mongod status
+Acesse localmente so digitando mongo no terminal;
+
+Listar bancos disponveis no servidor:
+show dbs
+
+Selecionar o banco a se trabalhar:
+use nomeDoBanco
+
+Mostra qual banco se esta trabalhando no momento:
+db
+
+Listar collections disponiveis no banco:
+show collections
+
+Dai é só fazer direto:
+
+Inserir dados:
+Insira sempre o nome do da colecao antes:
+db.colecao.insertOne({JSON})
+db.colecao.insertMany([{J},{S},{O},{N},{S}...])
+Lembrando que colecao nao e o mesmo que banco. No nosso teste, a 'colecao' (tabela) está dentro do banco. Os registros são chamados de documentos (equivlentes às linhas e colunas do banco convencional)
+
+Localizar dados:
+db.collection.find(query, projection)
+Esses parametros sao opcionais, mas servem, respectivamente, para filtrar os dados e exibir os dados. Se deixar em branco, ele retorna todos os dados. A mesma notacao de JSON e utilizada aqui.
+Adicione .pretty() ao final desse tipo de comando para deixar a visualizacao mais organizada.
+
+Contar os registros
+db.collection.count()
+
+Exercício 1: Retorne o documento com _id igual a 8.
+db.bios.find({_id: 8})
+
+Exercício 2: Retorne o documento com _id igual a 8, mas só exiba os campos: _id e name.
+db.bios.find(
+    {_id: 8},
+    {name: 1}
+    ).pretty()
+Obs.: o campo id sempre é retornado.
+
+Exercício 3: Retorne apenas os campos name e birth do documento com _id igual a 8.
+db.bios.find(
+    {_id: 8},
+    {name: 1, birth: 1}
+    ).pretty()
+
+Exercício 4: Retorne todos os documentos em que o campo name.first seja igual a John, utilizando o método pretty().
+db.bios.find( {"name.first": "John" } ).pretty()
+Cuidado com as aspas duplas antes dos parametros nesse caso de objeto dentro de outro
+
+Exercício 5: Retorne os 3 primeiros documentos da coleção bios utilizando o método pretty().
+db.bios.find().limit(3).pretty()
+
+Exercício 6: Retorne 2 documentos da coleção bios pulando os 5 primeiros documentos.
+db.bios.find().limit(2).skip(5).pretty()
+
+Utilizando o mongoimport, importe o arquivo books.json para a sua instância local do MongoDB e utilize a coleção books para construir queries para as seguintes questões:
+Exercício 7: Retorne a quantidade de documentos da coleção books.
+Ao importar o arquivo, ele vai para o banco test. Acesse a collection books dentro dele: 
+db.books.count()
+
+Exercício 8: Conte quantos livros existem com o status "PUBLISH".
+db.books.count({STATUS: "PUBLISH"})
+
+Exercício 9: Exiba os campos title, isbn e pageCount dos 3 primeiros livros. NÃO retorne o campo _id.
+db.books.find({},{_id: 0, isbn: 1, pageCount: 1}).limit(3)
+
+Exercício 10: Pule 5 documentos e exiba os campos _id, title, authors e status do livros com status "MEAP", limitando a 10 documentos.
+db.books.find({status: "MEAP"},{title: 1, authors: 1}).skip(5)
+

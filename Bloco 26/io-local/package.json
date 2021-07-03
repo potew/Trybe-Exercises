@@ -1,0 +1,18 @@
+{
+  "name": "io-local",
+  "version": "1.0.0",
+  "description": "Teoria bloco 26.2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node exercicio262.js"
+  },
+  "keywords": [
+    "Tiuhria"
+  ],
+  "author": "Trybeer",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

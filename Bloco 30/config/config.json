@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "tryber",
+    "password": "2135",
+    "database": "orm_example",
+    "host": "10.2.1.109",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "orm_example",
+    "host": "10.2.1.109",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

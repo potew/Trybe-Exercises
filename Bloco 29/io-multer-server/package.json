@@ -1,0 +1,15 @@
+{
+  "name": "bloco-29",
+  "version": "1.0.0",
+  "description": "Teoria B29",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tryber",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  }
+}

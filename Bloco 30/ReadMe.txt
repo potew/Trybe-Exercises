@@ -1,0 +1,1 @@
+Esta pasta contém o exercício da aula 1 do Bloco 31 bem como a teoria da aula 2, sendo que não tem como executar esta última para testes.
